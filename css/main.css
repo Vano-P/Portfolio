@@ -20,7 +20,6 @@ header {
 .header__row {
    height: 100px;
    width: 100%;
-   background: red;
    display: -webkit-flex;
    display: -ms-flex;
    display: flex;
