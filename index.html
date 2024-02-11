@@ -8,14 +8,163 @@
 <!--    <meta name="description" content="description">-->
     <meta name="author" content="V. Poghosyan">
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
-    <title>Title</title>
+    <title>Vano-P WebDeveloper</title>
     <link rel="stylesheet" href="./assets/styles/style.css">
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.0/typed.min.js" async></script>-->
 </head>
 
 <body>
 
-<header class="header"></header>
-<main class="main"></main>
+<header class="header">
+    <nav class="nav">
+        <div class="container">
+            <div class="logo nav__logo">
+                <a class="logo__link" href=""><img class="logo__item" src="./assets/images/logo.svg" alt="Logo: Vano-P"></a>
+            </div>
+            <ul class="menu">
+                <li class="menu__item"><a href="#hero" class="menu__link menu__link_active">Home</a></li>
+                <li class="menu__item"><a href="#projects" class="menu__link">Projects</a></li>
+                <li class="menu__item"><a href="#skills" class="menu__link">Skills</a></li>
+                <li class="menu__item"><a href="#prices" class="menu__link">Prices</a></li>
+                <li class="menu__item"><a href="#contacts" class="menu__link">Contact us</a></li>
+            </ul>
+            <div class="soc">
+                <a class="soc__link" href=""><svg class="soc__item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg></a>
+                <a class="soc__link" href=""><svg class="soc__item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path></svg></a>
+                <a class="soc__link" href=""><svg class="soc__item" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a>
+                <a class="soc__link burger"><span class="burger__lines"></span></a> <!--burger_active-->
+            </div>
+        </div>
+    </nav>
+</header>
+<main class="main">
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero__content"><!--FIX-->
+                <h1 class="hero__content-name">Hi, I'm Vano, <span class="hero__content-name_span">Web Developer</span></h1>
+                <p class="hero__content-des">
+                    I am in work using HTML5, CSS3, JavaScript and <a href="#skills">much more...</a><br>
+                    I do not violate the deadlines and always in touch.<br>
+                    I love my work and it is important for me that the client is satisfied!
+                </p>
+                <span class="hero__content-AnimateTyping"></span>
+            </div>
+
+            <div class="hero__downBtn"><a class="hero__downBtn-btn" href="#projects"></a></div>
+        </div>
+        <div class="mask"></div>
+    </section>
+    <!--  PROJECTS  -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="title">Projects</h2>
+            <div class="cards">
+                <i class="cards__arrow cards__arrow_left"></i>
+                <div class="cards__content">
+                    <div class="cards__item">
+                        <div class="cards__item-title">
+                            <div class="cards__item-title_buttons"><span></span></div>
+                            <p class="cards__item-title_text">Portfolio</p>
+                        </div>
+                        <div class="cards__item-image">
+                            <img class="cards__item-image_img" src="https://fastly.picsum.photos/id/819/350/200.jpg?hmac=pUwyWW9pvqNfl6Q9VTiEPsEcQw9J8vS1rOobqIQEZmw" alt="" draggable="false">
+                        </div>
+                        <div class="mask"></div>
+                    </div>
+                    <div class="cards__item">
+                        <div class="cards__item-title">
+                            <div class="cards__item-title_buttons"><span></span></div>
+                            <p class="cards__item-title_text">Portfolio</p>
+                        </div>
+                        <div class="cards__item-image">
+                            <img class="cards__item-image_img" src="https://fastly.picsum.photos/id/528/350/200.jpg?hmac=wlbWBBK3Ipbrk0a5_0iJDJHkfC8o6SR7NXpWY31WKy0" alt="" draggable="false">
+                        </div>
+                        <div class="mask"></div>
+                    </div>
+                    <div class="cards__item">
+                        <div class="cards__item-title">
+                            <div class="cards__item-title_buttons"><span></span></div>
+                            <p class="cards__item-title_text">Portfolio</p>
+                        </div>
+                        <div class="cards__item-image">
+                            <img class="cards__item-image_img" src="https://fastly.picsum.photos/id/588/350/200.jpg?hmac=ebzAcK0P_3faOXd1nJOEgwmB3Si8G-utOXOyLgct_7Y" alt="" draggable="false">
+                        </div>
+                        <div class="mask"></div>
+                    </div>
+                    <div class="cards__item">
+                        <div class="cards__item-title">
+                            <div class="cards__item-title_buttons"><span></span></div>
+                            <p class="cards__item-title_text">Portfolio</p>
+                        </div>
+                        <div class="cards__item-image">
+                            <img class="cards__item-image_img" src="https://fastly.picsum.photos/id/258/350/200.jpg?hmac=IRqgi3EoRKC7DsjWK1V_iopdcg0QtYFhVK6RmNEr0bI" alt="" draggable="false">
+                        </div>
+                        <div class="mask"></div>
+                    </div>
+                    <div class="cards__item">
+                        <div class="cards__item-title">
+                            <div class="cards__item-title_buttons"><span></span></div>
+                            <p class="cards__item-title_text">Portfolio</p>
+                        </div>
+                        <div class="cards__item-image">
+                            <img class="cards__item-image_img" src="https://fastly.picsum.photos/id/883/350/200.jpg?hmac=GDHB94vJbAGqu6_osjvzdEoXvqwQQ4iErUhdpyaxupQ" alt="" draggable="false">
+                        </div>
+                        <div class="mask"></div>
+                    </div>
+                    <div class="cards__item">
+                        <div class="cards__item-title">
+                            <div class="cards__item-title_buttons"><span></span></div>
+                            <p class="cards__item-title_text">Portfolio</p>
+                        </div>
+                        <div class="cards__item-image">
+                            <img class="cards__item-image_img" src="https://fastly.picsum.photos/id/10/350/200.jpg?hmac=pXHwmVEamOIII5c0fUE9GYvTZMWUL5QaCtpI0go6eOw" alt="" draggable="false">
+                        </div>
+                        <div class="mask"></div>
+                    </div>
+                    <div class="cards__item">
+                        <div class="cards__item-title">
+                            <div class="cards__item-title_buttons"><span></span></div>
+                            <p class="cards__item-title_text">Portfolio</p>
+                        </div>
+                        <div class="cards__item-image">
+                            <img class="cards__item-image_img" src="https://fastly.picsum.photos/id/174/350/200.jpg?hmac=nzkyrdZtjQcAZEnlRRyCirRyCal19-DrdRZlQeSWPDg" alt="" draggable="false">
+                        </div>
+                        <div class="mask"></div>
+                    </div>
+                    <div class="cards__item">
+                        <div class="cards__item-title">
+                            <div class="cards__item-title_buttons"><span></span></div>
+                            <p class="cards__item-title_text">Portfolio</p>
+                        </div>
+                        <div class="cards__item-image">
+                            <img class="cards__item-image_img" src="https://fastly.picsum.photos/id/910/350/200.jpg?hmac=JAtfDz__IPVhxnbe-4KcXWerxKYbcXSHI6oolNJIDYY" alt="" draggable="false">
+                        </div>
+                        <div class="mask"></div>
+                    </div>
+                </div>
+                <i class="cards__arrow cards__arrow_right"></i>
+            </div>
+        </div>
+
+    </section> <!--  FIX  -->
+    <!--  SKILLS  -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="title">My Skills</h2>
+        </div>
+        <div class="mask"></div>
+    </section>
+
+    <!--  PRICES  -->
+    <section class="prices" id="prices">
+
+    </section>
+
+    <!--  CONTACTUS  -->
+    <section class="contacts" id="contacts">
+
+    </section>
+</main>
 <footer class="footer"></footer>
 
 <noscript>Please enable JavaScript in your browser</noscript>

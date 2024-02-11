@@ -1,3 +1,507 @@
 /*---------- Normalize ----------*/
 @import 'Normalize';
 
+/*---------- Normalize ----------*/
+@import 'fonts';
+
+/*---------- Variables ----------*/
+$ubuntu: Ubuntu, Arial;
+$blueDark: #313866;
+$blue: #504099;
+$blueLight: #4477CE;
+$blueLighter: #8CABFF;
+$pinkDark: #974EC3;
+$transition: 0.3s ease-in-out; //FIX
+
+/*---------- Mixins ----------*/
+@mixin container ($width) {
+  width: $width;
+  margin: 0 auto;
+}
+
+@mixin mask () {
+  background: rgba(0, 25, 57, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*---------- Base ----------*/
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: $ubuntu;
+  background-color: $blueDark;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/*---------- Header ----------*/
+.header {
+  width: 100vw;
+  position: absolute;
+  z-index: 10;
+  transition: $transition;
+
+  & .nav {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    & .container {
+      @include container(1080px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__logo {
+      height: 3.75rem;
+      transition: $transition;
+      &:hover {scale: 1.05}
+    }
+
+    & .menu {
+      list-style: none;
+      display: flex;
+      gap: 50px;
+      align-items: center;
+
+      &__link {
+        font-size: 1.25rem;
+        color: $blueLight;
+        transition: $transition;
+
+        &:hover {color: $blueLighter}
+        &_active {
+          position: relative;
+          color: $blueLighter;
+
+          &:after {
+            content: '';
+            position: absolute;
+            width: 95%;
+            height: 2px;
+            background-color: $blueLighter;
+            bottom: 0;
+            left: 50%;
+            translate: -50% .2rem;
+          }
+        }
+      }
+    }
+
+    & .soc {
+      display: flex;
+      height: 30px;
+      gap: 30px;
+      align-items: center;
+
+      &__link {
+        color: $blueLight;
+        width: 25px;
+        height: 25px;
+        transition: $transition;
+        &:hover {color: $blueLighter}
+        &:hover {scale: 1.1}
+      }
+    }
+
+    & .burger {
+      display: none;
+      height: 25px;
+      align-items: center;
+      position: relative;
+      padding-top: 4px;
+      cursor: pointer;
+
+      &:before, &:after {
+        content: '';
+        transition: $transition;
+        border-radius: 10px;
+        width: 25px;
+        height: 3px;
+        background-color: $blueLight;
+        position: absolute;
+        left: 0;
+      }
+      &:before {top: 5px}
+      &:after {bottom: 1px}
+
+      &__lines {
+        height: 3px;
+        width: 25px;
+        background-color: $blueLight;
+        display: flex;
+        transition: $transition;
+      }
+      &:hover .burger__lines, &:hover:after, &:hover:before {background-color: $blueLighter;}
+      &_active {
+        & .burger__lines {
+          opacity: 0;
+          visibility: hidden;
+        }
+        &:before{
+          rotate: 45deg;
+          top: 60%;
+          translate: 0 -60%;
+        }
+        &:after{
+          rotate: -45deg;
+          top: 60%;
+          translate: 0 -60%;
+        }
+      }
+
+    }
+  }
+  // ----------
+  & .logo {
+    &__item {
+      height: 100%;
+    }
+  }
+
+
+  &_active {
+    height: 3.75rem;
+    position: fixed;
+    background: rgba(0, 0, 25, 0.3);
+    backdrop-filter: blur(24px);
+
+    & .nav {
+      height: 3.75rem;
+      &__logo {height: 3.2rem}
+    }
+  }
+}
+
+/*---------- Main ----------*/
+.main {
+  animation: animateBgMain 20s linear infinite;
+  background-image: linear-gradient(90deg,#0a2342,#01162e,#0a2342,#01162e);
+  background-size: 300% 100%;
+  @keyframes animateBgMain {
+    0% {background-position: 100% 0;}
+    100% {background-position: 0 0;}
+  }
+}
+
+.hero {
+  width: 100vw;
+  height: 100svh;
+  background: url('../images/bg.jpg') fixed top center no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  & .container {
+    z-index: 1;
+  }
+  &__content {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-title {
+      font-size: 1.25rem;
+    }
+    &-name {
+      font-size: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      &_span {
+        border: 2px solid $blueLight;
+        padding: .5rem 1rem;
+        color: $blueLight;
+        border-radius: 4px;
+        align-self: start;
+      }
+    }
+
+    &-des {
+
+      & a {
+        color:$blueLight;
+        transition: $transition;
+        &:hover {color:$blueLighter}
+      }
+
+    }
+
+  } //FIX
+
+  &__downBtn {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    translate: -50%;
+
+    &-btn {
+      width: 20px;
+      height: 20px;
+      display: block;
+      position: relative;
+      border-right: 3px solid $blueLight;
+      border-bottom: 3px solid $blueLight;
+      rotate: 45deg;
+      animation: DownBtn 1.5s linear infinite;
+    }
+    @keyframes DownBtn {
+      0% {translate: 0 10px;}
+      50% {translate: 0 -10px;}
+      100% {translate: 0 10px;}
+    }
+  }
+  & .mask {@include mask()}
+}
+
+/*---------- Projects ----------*/
+.projects { //Fix
+  padding: 5rem 0;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  & .container {
+    @include container(1600px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .cards {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+
+    &__content {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      width: 100%;
+      scroll-behavior: smooth;
+      overflow: hidden;
+      scroll-snap-type: x mandatory;
+      &::-webkit-scrollbar{display: none}
+      &.dragging {
+        cursor: grab;
+        user-select: none;
+        scroll-behavior: auto;
+        scroll-snap-type: none; //FIX
+      }
+    }
+    &__arrow {
+      border-bottom: 3px solid $blueLight;
+      border-right: 3px solid $blueLight;
+      height: 1.5rem;
+      width: 1.5rem;
+      cursor: pointer;
+      opacity: .5;
+      transition: $transition;
+      &_left {rotate: 135deg}
+      &_right {rotate: -45deg}
+
+      &:hover {
+        opacity: 1;
+        border-bottom: 3px solid $blueLighter;
+        border-right: 3px solid $blueLighter;
+      }
+    }
+    &__item { //FIX
+      border-radius: 3px;
+      height: 200px;
+      width: 350px;
+      position: relative;
+      scroll-snap-align: start;
+      cursor: pointer; // FIX
+      & .mask {
+        @include mask;
+        background: rgba(0, 25, 57, 0.4);
+      }
+
+      &-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: silver;
+        width: 100%;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &_buttons {
+          height: 100%;
+          width: 100px;
+          position: absolute;
+          left: 0;
+          display: flex;
+          align-items: center;
+          padding: 0 2rem;
+
+          & span {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            position: relative;
+            background-color: darkgreen;
+
+            &:before, &:after {
+              content: '';
+              width: 1rem;
+              height: 1rem;
+              border-radius: 50%;
+              position: absolute;
+              top: 0;
+            }
+            &:before {
+              left: -20px;
+              background-color: darkred;
+            }
+            &:after {
+              right: -20px;
+              background-color: darkgoldenrod;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*---------- Skills ----------*/
+.skills { //Fix
+  padding: 5rem 0;
+  height: 100svh;
+  display: flex;
+
+  position: relative;
+
+  background: url('../images/skillsBg.jpg') fixed top center no-repeat;
+  background-size: cover;
+
+  & .container{
+    @include container(1200px);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  & .mask {@include mask;}
+}
+
+/*---------- Prices ----------*/
+.prices {
+}
+/*---------- Contacts ----------*/
+.contacts {
+}
+
+//====================
+.title {
+  color: $blueLight;
+  position: relative;
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 1;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    bottom: -1rem;
+    left: 50%;
+    translate: -50%;
+    background-color: $blueLight;
+  }
+}
+
+/*------------------------------------------------------------ MEDIA ------------------------------------------------------------*/
+@media screen and (max-width: 1660px) {
+  .projects .container {@include container(1200px);}
+}
+@media screen and (max-width: 1240px) {
+  .projects .container {@include container(777px)}
+  .projects .cards {gap: 0.5rem;}
+  .projects .cards__content {gap: 1rem;}
+}
+@media screen and (max-width: 1100px) {
+  .header .nav {
+      padding: 0 20px;
+      & .menu {gap: 40px;}
+      & .soc {gap: 20px;}
+    }
+}
+@media screen and (max-width: 800px) {
+  .header .nav {
+    position: relative;
+    & .menu {
+      position: absolute;
+      top: 0;
+      right: -80vw;
+      width: 80vw;
+      height: 100svh;
+      background: rgba(0, 0, 25, 0.3); // FIX
+      backdrop-filter: blur(24px); // FIX
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 6rem;
+      transition: $transition;
+      &_active {translate: -80vw}
+    }
+    & .soc {
+      transition: $transition;
+      z-index: 1;
+      & .burger {display: flex}
+    }
+  }
+  .projects .container {@include container(409px)}
+}
+
+@media screen and (max-width: 700px) {
+  .header .nav .menu {width: 75vw;}
+}
+
+@media screen and (max-width: 600px) {
+  .header .nav .menu {width: 70vw;}
+}
+
+@media screen and (max-width: 500px) {
+  .header .nav .menu {
+    width: 65vw;
+    align-items: center;
+    padding: 6rem 1rem;
+  }
+  .projects .cards__arrow {display: none}
+  .projects .container {@include container(325px)}
+  .projects .cards__content {gap: 0;}
+
+
+}
+
+@media screen and (max-width: 400px) {
+  .header .nav .menu {width: 60vw;}
+}
+
