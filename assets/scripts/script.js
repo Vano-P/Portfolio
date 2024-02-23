@@ -2,9 +2,10 @@
 const burger = document.querySelector('.burger')
 const menu = document.querySelector('.menu')
 
-burger.addEventListener('click', () => {
+burger.addEventListener('click', event => {
     burger.classList.toggle('burger_active')
     menu.classList.toggle('menu_active')
+    console.log(event.currentTarget)
 })
 
 const header = document.querySelector('.header')
@@ -84,6 +85,7 @@ slideContent.addEventListener('mousedown', dragStart)
 slideContent.addEventListener('mousemove', dragging)
 document.addEventListener('mouseup', dragStop)
 slideContent.addEventListener('scroll', InfinityScroll)
+slideContent.onmouseover(dragging)
 
 
 // // TYPING ANIMATION
