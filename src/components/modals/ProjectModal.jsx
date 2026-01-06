@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom'
 import { FiX, FiExternalLink } from 'react-icons/fi'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useLockBodyScroll } from '../../hooks/useLockBodyScroll'
 import { useLang } from '../../context/LanguageContext'
 
@@ -10,25 +10,12 @@ const ProjectModal = ({ project, onClose, onViewCase }) => {
   const { t } = useLang()
   const { lang } = useLang()
 
-  useEffect(() => {
-    const onEsc = (e) => e.key === 'Escape' && onClose()
-    window.addEventListener('keydown', onEsc)
-    return () => window.removeEventListener('keydown', onEsc)
-  }, [ onClose ])
-
   if (!project) return null
 
   return createPortal(
-      <div
-          className='fixed inset-0 z-[100] flex items-center justify-center'
-          aria-modal='true'
-          role='dialog'
-      >
+      <div className='fixed inset-0 z-[100] flex items-center justify-center' aria-modal='true' role='dialog'>
         {/* OVERLAY */ }
-        <div
-            className='absolute inset-0 bg-black/70 backdrop-blur-sm'
-            onClick={ onClose }
-        />
+        <div className='absolute inset-0 bg-black/70 backdrop-blur-sm' onClick={ onClose } />
 
         {/* MODAL */ }
         <div className='relative z-10 w-[92%] max-w-4xl overflow-hidden rounded-3xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))]'>
@@ -36,15 +23,9 @@ const ProjectModal = ({ project, onClose, onViewCase }) => {
           <div className='flex items-center justify-between border-b border-[rgb(var(--border))] p-5'>
             <div>
               <h3 className='text-lg font-semibold'>{ project.title }</h3>
-              <span className='text-xs text-indigo-400'>
-              { t.portfolio.filters[project.category] }
-            </span>
+              <span className='text-xs text-indigo-400'> { t.portfolio.filters[project.category] } </span>
             </div>
-            <button
-                onClick={ onClose }
-                aria-label='Close modal'
-                className='cursor-pointer rounded-lg p-2 transition hover:bg-[rgb(var(--border))]'
-            >
+            <button onClick={ onClose } aria-label='Close modal' className='cursor-pointer rounded-lg p-2 transition hover:bg-[rgb(var(--border))]'>
               <FiX />
             </button>
           </div>
@@ -54,22 +35,14 @@ const ProjectModal = ({ project, onClose, onViewCase }) => {
             {/* GALLERY */ }
             <div>
               <div className='mb-3 aspect-[4/3] overflow-hidden rounded-xl'>
-                <img
-                    src={ project.images[index] }
-                    alt={ project.title }
-                    className='h-full w-full object-cover'
-                />
+                <img src={ project.images[index] } alt={ project.title } className='h-full w-full object-cover' />
               </div>
-              <div className='flex gap-2'>
+              <div className='flex gap-2 flex-wrap'>
                 { project.images.map((img, i) => (
                     <button
-                        key={ img }
+                        key={ i }
                         onClick={ () => setIndex(i) }
-                        className={ `h-14 w-20 overflow-hidden rounded-lg border ${
-                            i === index
-                                ? 'border-indigo-400'
-                                : 'border-[rgb(var(--border))]'
-                        }` }
+                        className={ `h-auto w-19 overflow-hidden rounded-lg border ${ i === index ? 'border-indigo-400' : 'border-[rgb(var(--border))]' }` }
                     >
                       <img
                           src={ img }

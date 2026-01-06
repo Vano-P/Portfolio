@@ -11,7 +11,6 @@ import ProjectSidebar from '../components/project/ProjectSidebar.jsx'
 const ProjectDetails = () => {
   const { slug } = useParams()
   const navigate = useNavigate()
-  const { openOrder } = useOrder()
   const { t } = useLang()
   const { lang } = useLang()
 

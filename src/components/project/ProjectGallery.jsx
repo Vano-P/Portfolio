@@ -6,7 +6,7 @@ const ProjectGallery = ({ images, title }) => {
   if (!images?.length) return null
 
   return (
-      <div className='space-y-4 sm:col-span-2 sm:row-span-2'>
+      <div className='space-y-4 sm:col-span-2 sm:row-span-2 '>
         {/* MAIN IMAGE */ }
         <div className='aspect-[4/3] overflow-hidden rounded-2xl border border-[rgb(var(--border))]'>
           <img
@@ -20,14 +20,9 @@ const ProjectGallery = ({ images, title }) => {
         <div className='flex gap-3'>
           { images.map((img, i) => (
               <button
-                  key={ img }
+                  key={ i }
                   onClick={ () => setActive(i) }
-                  className={ `
-              h-20 w-28 overflow-hidden rounded-xl border transition
-              ${ i === active
-                      ? 'border-indigo-400'
-                      : 'border-[rgb(var(--border))] opacity-70 hover:opacity-100' }
-            ` }
+                  className={ ` h-auto w-22 overflow-hidden rounded-xl border transition ${ i === active ? 'border-indigo-400' : 'border-[rgb(var(--border))] opacity-70 hover:opacity-100' } ` }
               >
                 <img
                     src={ img }
