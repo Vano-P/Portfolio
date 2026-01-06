@@ -12,7 +12,7 @@ const ProjectSidebar = ({ project, t }) => {
       projects[currentIndex + 1] || projects[0]
 
   return (
-      <aside className='sticky top-24 space-y-6 rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] p-6'>
+      <aside className='lg:sticky top-24 space-y-6 rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] p-6'>
 
         {/* TECH STACK */ }
         <div>

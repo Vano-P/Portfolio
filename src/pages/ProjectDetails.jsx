@@ -59,7 +59,7 @@ const ProjectDetails = () => {
             </p>
           </div>
 
-          <div className='mb-20 grid gap-x-6 gap-y-10 sm:grid-cols-3 sm:grid-rows-2'>
+          <div className='mb-20 grid gap-x-6 gap-y-10 lg:grid-cols-3 lg:grid-rows-2'>
             {/* GALLERY */ }
             <ProjectGallery images={ project.images } title={ project.title } />
 
@@ -67,7 +67,7 @@ const ProjectDetails = () => {
             <ProjectSidebar project={ project } t={ t } />
 
             {/* CONTENT */ }
-            <div className='space-y-10 lg:col-span-2'>
+            <div className='space-y-10 md:col-span-2'>
               <div>
                 <h3 className='mb-3 text-xl font-semibold'>
                   { t.projectDetails.challenge }

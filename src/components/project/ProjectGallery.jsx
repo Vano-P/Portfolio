@@ -6,7 +6,7 @@ const ProjectGallery = ({ images, title }) => {
   if (!images?.length) return null
 
   return (
-      <div className='space-y-4 sm:col-span-2 sm:row-span-2 '>
+      <div className='space-y-4 lg:col-span-2 sm:row-span-2 '>
         {/* MAIN IMAGE */ }
         <div className='aspect-[4/3] overflow-hidden rounded-2xl border border-[rgb(var(--border))]'>
           <img

@@ -1,4 +1,5 @@
 import { useLang } from '../context/LanguageContext.jsx'
+import { scrollToSection } from '../utils/scrollToSection.js'
 
 const variants = {
   header: 'hidden items-center gap-8 md:flex gap-8',
@@ -13,12 +14,12 @@ const linkVariants = {
 }
 
 const navItems = [
-  { key: 'home', href: '#home' },
-  { key: 'services', href: '#services' },
-  { key: 'about', href: '#about' },
-  { key: 'portfolio', href: '#portfolio' },
-  { key: 'pricing', href: '#pricing' },
-  { key: 'contact', href: '#contact' }
+  { key: 'home', id: 'home' },
+  { key: 'services', id: 'services' },
+  { key: 'about', id: 'about' },
+  { key: 'portfolio', id: 'portfolio' },
+  { key: 'pricing', id: 'pricing' },
+  { key: 'contact', id: 'contact' }
 ]
 
 const Navigation = ({ variant = 'header' }) => {
@@ -26,13 +27,13 @@ const Navigation = ({ variant = 'header' }) => {
   return (
       <nav className={ variants[variant] }>
         { navItems.map((item) => (
-            <a
+            <button
                 key={ item.key }
-                href={ item.href }
+                onClick={ () => scrollToSection(item.id) }
                 className={ `${ linkVariants[variant] } transition` }
             >
               { t.nav[item.key] }
-            </a>
+            </button>
         )) }
       </nav>
   )
