@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+
+/* ======================
+   DESIGN TOKENS
+====================== */
+:root {
+  --bg: 11 14 20;
+  --surface: 18 24 38;
+  --primary: 99 102 241;
+  --text: 229 231 235;
+  --muted: 156 163 175;
+  --border: 31 41 55;
+}
+
+/* ===== LIGHT MODE ===== */
+.light {
+  --bg: 248 250 252;
+  --surface: 255 255 255;
+  --text: 17 24 39;
+  --muted: 107 114 128;
+  --border: 229 231 235;
+}
+
+/* ======================
+   BASE
+====================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--text));
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.container {
+  @apply mx-auto max-w-7xl px-4;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
