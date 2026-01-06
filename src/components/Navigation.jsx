@@ -2,7 +2,7 @@ import { useLang } from '../context/LanguageContext.jsx'
 
 const variants = {
   header: 'hidden items-center gap-8 md:flex gap-8',
-  footer: 'flex flex-col gap-2 items-start',
+  footer: 'flex flex-col gap-2 items-center sm:items-start',
   mobile: 'flex flex-col gap-4 items-center'
 }
 

@@ -17,12 +17,12 @@ const ProjectGallery = ({ images, title }) => {
         </div>
 
         {/* THUMBNAILS */ }
-        <div className='flex gap-3'>
+        <div className='flex gap-2 sm:gap-3'>
           { images.map((img, i) => (
               <button
                   key={ i }
                   onClick={ () => setActive(i) }
-                  className={ ` h-auto w-22 overflow-hidden rounded-xl border transition ${ i === active ? 'border-indigo-400' : 'border-[rgb(var(--border))] opacity-70 hover:opacity-100' } ` }
+                  className={ ` h-auto w-auto sm:w-22 lg:w-32 overflow-hidden rounded-xl border transition ${ i === active ? 'border-indigo-400' : 'border-[rgb(var(--border))] opacity-70 hover:opacity-100' } ` }
               >
                 <img
                     src={ img }

@@ -18,7 +18,7 @@ const ProjectModal = ({ project, onClose, onViewCase }) => {
         <div className='absolute inset-0 bg-black/70 backdrop-blur-sm' onClick={ onClose } />
 
         {/* MODAL */ }
-        <div className='relative z-10 w-[92%] max-w-4xl overflow-hidden rounded-3xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))]'>
+        <div className='relative z-10 w-[92%] max-w-4xl overflow-hidden rounded-xl sm:rounded-3xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))]'>
           {/* HEADER */ }
           <div className='flex items-center justify-between border-b border-[rgb(var(--border))] p-5'>
             <div>
@@ -26,29 +26,25 @@ const ProjectModal = ({ project, onClose, onViewCase }) => {
               <span className='text-xs text-indigo-400'> { t.portfolio.filters[project.category] } </span>
             </div>
             <button onClick={ onClose } aria-label='Close modal' className='cursor-pointer rounded-lg p-2 transition hover:bg-[rgb(var(--border))]'>
-              <FiX />
+              <FiX className='text-2xl' />
             </button>
           </div>
 
           {/* CONTENT */ }
-          <div className='grid gap-8 p-6 lg:grid-cols-2'>
+          <div className='grid gap-8 p-2 sm:p-6 md:grid-cols-2'>
             {/* GALLERY */ }
             <div>
               <div className='mb-3 aspect-[4/3] overflow-hidden rounded-xl'>
                 <img src={ project.images[index] } alt={ project.title } className='h-full w-full object-cover' />
               </div>
-              <div className='flex gap-2 flex-wrap'>
+              <div className='flex gap-2'>
                 { project.images.map((img, i) => (
                     <button
                         key={ i }
                         onClick={ () => setIndex(i) }
-                        className={ `h-auto w-19 overflow-hidden rounded-lg border ${ i === index ? 'border-indigo-400' : 'border-[rgb(var(--border))]' }` }
+                        className={ `h-auto w-auto sm:w-22 lg:w-24 overflow-hidden rounded-lg border ${ i === index ? 'border-indigo-400' : 'border-[rgb(var(--border))]' }` }
                     >
-                      <img
-                          src={ img }
-                          alt=''
-                          className='h-full w-full object-cover'
-                      />
+                      <img src={ img } alt='' className='h-full w-full object-cover' />
                     </button>
                 )) }
               </div>

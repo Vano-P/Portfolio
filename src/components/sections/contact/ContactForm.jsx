@@ -57,7 +57,7 @@ const ContactForm = () => {
   return (
       <form
           onSubmit={ onSubmit }
-          className='rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] p-8'
+          className='rounded-xl sm:rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] p-4 sm:p-8'
           aria-describedby='form-status'
       >
         <div className='grid gap-5'>

@@ -15,34 +15,31 @@ const Footer = () => {
       <footer className='border-t border-[rgb(var(--border))] bg-[rgb(var(--bg))] pt-10'>
         <Container>
           <div className='grid gap-12 md:grid-cols-2'>
-            {/* LEFT */ }
-            <div>
+            <div className='flex items-center flex-col sm:items-start'>
               <Logo size='sm' />
-
-              <p className='mt-3 max-w-sm text-sm text-[rgb(var(--muted))]'>
+              <p className='mt-3 max-w-sm text-sm text-[rgb(var(--muted))] text-center sm:text-left'>
                 { t.footer.description }
               </p>
             </div>
 
-            {/* RIGHT */ }
             <div className='grid gap-8 sm:grid-cols-2'>
               {/* NAV */ }
               <div>
                 { !isProjectPage && (
-                    <>
+                    <div className='flex items-center flex-col sm:items-start'>
                       <div className='mb-3 text-sm font-medium'> { t.footer.navigationTitle } </div>
                       <Navigation variant='footer' />
-                    </>
+                    </div>
                 ) }
               </div>
 
 
               {/* CONTACT */ }
-              <div>
+              <div className='flex items-center flex-col sm:items-start'>
                 <div className='mb-3 text-sm font-medium'>
                   { t.footer.contactTitle }
                 </div>
-                <ul className='space-y-2 text-sm text-[rgb(var(--muted))]'>
+                <ul className='space-y-2 text-sm text-[rgb(var(--muted))] flex items-center flex-col sm:items-start'>
                   <li className='flex items-center gap-2'>
                     <FiSend />
                     <a
