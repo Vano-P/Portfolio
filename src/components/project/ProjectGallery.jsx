@@ -13,6 +13,7 @@ const ProjectGallery = ({ images, title }) => {
               src={ images[active] }
               alt={ title }
               className='h-full w-full object-cover'
+              loading='lazy'
           />
         </div>
 
@@ -22,12 +23,13 @@ const ProjectGallery = ({ images, title }) => {
               <button
                   key={ i }
                   onClick={ () => setActive(i) }
-                  className={ ` h-auto w-auto sm:w-22 lg:w-32 overflow-hidden rounded-xl border transition ${ i === active ? 'border-indigo-400' : 'border-[rgb(var(--border))] opacity-70 hover:opacity-100' } ` }
+                  className={ `cursor-pointer h-auto w-auto sm:w-22 lg:w-32 overflow-hidden rounded-xl border transition ${ i === active ? 'border-indigo-400' : 'border-[rgb(var(--border))] opacity-70 hover:opacity-100' } ` }
               >
                 <img
                     src={ img }
                     alt=''
                     className='h-full w-full object-cover'
+                    loading='lazy'
                 />
               </button>
           )) }

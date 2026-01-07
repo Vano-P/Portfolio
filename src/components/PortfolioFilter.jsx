@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 const PortfolioFilter = ({ filters, active, onChange }) => {
   return (
       <div className='mb-10 flex flex-wrap gap-3'>
@@ -18,4 +20,4 @@ const PortfolioFilter = ({ filters, active, onChange }) => {
   )
 }
 
-export default PortfolioFilter
+export default memo(PortfolioFilter)

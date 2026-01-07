@@ -8,8 +8,8 @@ const variants = {
 }
 
 const linkVariants = {
-  header: 'text-sm font-medium text-[rgb(var(--muted))] hover:text-[rgb(var(--text))]',
-  footer: 'text-sm text-[rgb(var(--muted))] hover:text-indigo-400 transition',
+  header: 'text-sm font-medium text-[rgb(var(--muted))] hover:text-[rgb(var(--text))] cursor-pointer',
+  footer: 'text-sm text-[rgb(var(--muted))] hover:text-indigo-400 transition cursor-pointer',
   mobile: 'text-base font-medium'
 }
 

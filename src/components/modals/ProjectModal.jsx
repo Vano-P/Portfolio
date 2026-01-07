@@ -35,7 +35,7 @@ const ProjectModal = ({ project, onClose, onViewCase }) => {
             {/* GALLERY */ }
             <div>
               <div className='mb-3 aspect-[4/3] overflow-hidden rounded-xl'>
-                <img src={ project.images[index] } alt={ project.title } className='h-full w-full object-cover' />
+                <img src={ project.images[index] } alt={ project.title } className='h-full w-full object-cover' loading='lazy' />
               </div>
               <div className='flex gap-2'>
                 { project.images.map((img, i) => (
@@ -44,7 +44,7 @@ const ProjectModal = ({ project, onClose, onViewCase }) => {
                         onClick={ () => setIndex(i) }
                         className={ `h-auto w-auto sm:w-22 lg:w-24 overflow-hidden rounded-lg border ${ i === index ? 'border-indigo-400' : 'border-[rgb(var(--border))]' }` }
                     >
-                      <img src={ img } alt='' className='h-full w-full object-cover' />
+                      <img src={ img } alt='' className='h-full w-full object-cover' loading='lazy' />
                     </button>
                 )) }
               </div>
@@ -87,7 +87,7 @@ const ProjectModal = ({ project, onClose, onViewCase }) => {
                 { onViewCase && (
                     <button
                         onClick={ () => onViewCase(project.slug) }
-                        className='inline-flex items-center gap-2 rounded-xl border border-[rgb(var(--border))] px-5 py-3 font-medium transition hover:bg-[rgb(var(--border))]'
+                        className='inline-flex items-center gap-2 rounded-xl border border-[rgb(var(--border))] px-5 py-3 font-medium transition hover:bg-[rgb(var(--border))] cursor-pointer'
                     >
                       { t.projectModal.viewCase }
                     </button>

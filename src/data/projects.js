@@ -45,7 +45,7 @@ export const projects = [
       ru: 'Создан адаптивный интерфейс с понятной иерархией контента и сильными призывами к действию.'
     },
     tech: [ 'HTML', 'CSS', 'JavaScript' ],
-    images: [ '/projects/business-1.jpg', '/projects/business-2.jpg' ],
+    images: [ 'https://picsum.photos/1597/1200' ],
     demoUrl: 'https://example.com'
   },
 
@@ -70,7 +70,7 @@ export const projects = [
       ru: 'Использованы маркетинговые секции, блоки с преимуществами и чёткая визуальная иерархия.'
     },
     tech: [ 'React', 'Tailwind CSS' ],
-    images: [ '/projects/saas-1.jpg', '/projects/saas-2.jpg' ],
+    images: [ 'https://picsum.photos/1596/1200' ],
     demoUrl: 'https://example.com'
   },
 
@@ -120,7 +120,7 @@ export const projects = [
       ru: 'Использованы современные UI-паттерны, отзывы и чёткое позиционирование.'
     },
     tech: [ 'React', 'Tailwind CSS' ],
-    images: [ '/projects/startup-1.jpg', '/projects/startup-2.jpg' ],
+    images: [ 'https://picsum.photos/1595/1200' ],
     demoUrl: 'https://example.com'
   },
 
@@ -145,7 +145,7 @@ export const projects = [
       ru: 'Реализована выразительная типографика, анимации и сильные CTA.'
     },
     tech: [ 'React', 'Tailwind CSS' ],
-    images: [ '/projects/agency-1.jpg', '/projects/agency-2.jpg' ],
+    images: [ 'https://picsum.photos/1594/1200' ],
     demoUrl: 'https://example.com'
   },
 
@@ -170,7 +170,7 @@ export const projects = [
       ru: 'Использованы акценты на продукте, визуалы и понятные ценовые блоки.'
     },
     tech: [ 'React', 'Tailwind CSS' ],
-    images: [ '/projects/ecommerce-1.jpg', '/projects/ecommerce-2.jpg' ],
+    images: [ 'https://picsum.photos/1593/1200' ],
     demoUrl: 'https://example.com'
   },
 
@@ -195,7 +195,7 @@ export const projects = [
       ru: 'Оптимизированы типографика, отступы и структура контента.'
     },
     tech: [ 'HTML', 'CSS', 'JavaScript' ],
-    images: [ '/projects/blog-1.jpg', '/projects/blog-2.jpg' ],
+    images: [ 'https://picsum.photos/1592/1200' ],
     demoUrl: 'https://example.com'
   },
 
@@ -220,7 +220,7 @@ export const projects = [
       ru: 'Использованы лаконичные тексты, визуалы и сильные CTA.'
     },
     tech: [ 'React', 'Tailwind CSS' ],
-    images: [ '/projects/product-1.jpg', '/projects/product-2.jpg' ],
+    images: [ 'https://picsum.photos/1591/1200' ],
     demoUrl: 'https://example.com'
   }
 ]

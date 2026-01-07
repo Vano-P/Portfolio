@@ -48,7 +48,7 @@ const ProjectSidebar = ({ project, t }) => {
 
           <button
               onClick={ () => openOrder({ project }) }
-              className='inline-flex w-full items-center justify-center rounded-xl border border-[rgb(var(--border))] px-5 py-3 font-medium transition hover:bg-[rgb(var(--border))]'
+              className='inline-flex w-full items-center justify-center rounded-xl border border-[rgb(var(--border))] px-5 py-3 font-medium transition hover:bg-[rgb(var(--border))] cursor-pointer'
           >
             { t.projectDetails.order }
           </button>
@@ -59,7 +59,7 @@ const ProjectSidebar = ({ project, t }) => {
 
             <button
                 onClick={ () => navigate(`/portfolio/${ nextProject.slug }`) }
-                className='text-sm font-medium hover:text-indigo-400 transition'
+                className='text-sm font-medium hover:text-indigo-400 transition cursor-pointer'
             >
               { nextProject.title } →
             </button>

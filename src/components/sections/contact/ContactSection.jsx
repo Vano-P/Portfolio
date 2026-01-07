@@ -2,26 +2,20 @@ import Container from '../../ui/Container.jsx'
 import { useLang } from '../../../context/LanguageContext.jsx'
 import { socials } from '../../../data/socials.js'
 import ContactForm from './ContactForm.jsx'
+import SectionTitle from '../../ui/SectionTitle.jsx'
 
 
 const ContactSection = () => {
   const { t } = useLang()
 
   return (
-      <section id='contact' className='py-32 border-t border-[rgb(var(--border))]'>
+      <section id='contact' className='py-24 border-t border-[rgb(var(--border))]'>
         <Container>
           <div className='grid gap-16 items-start lg:grid-cols-2'>
 
             {/* TEXT */ }
             <div>
-              <h2 className='mb-4 text-3xl font-bold sm:text-4xl'>
-                { t.contact.title }
-                <span className='text-indigo-400'>.</span>
-              </h2>
-
-              <p className='mb-8 max-w-xl text-[rgb(var(--muted))]'>
-                { t.contact.description }
-              </p>
+              <SectionTitle title={ t.contact.title } subtitle={ t.contact.description } />
 
               <div className='rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] p-6'>
                 <p className='text-sm text-[rgb(var(--muted))]'>
