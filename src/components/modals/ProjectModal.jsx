@@ -42,7 +42,7 @@ const ProjectModal = ({ project, onClose, onViewCase }) => {
                     <button
                         key={ i }
                         onClick={ () => setIndex(i) }
-                        className={ `h-auto w-auto sm:w-22 lg:w-24 overflow-hidden rounded-lg border ${ i === index ? 'border-indigo-400' : 'border-[rgb(var(--border))]' }` }
+                        className={ `h-auto w-auto max-w-[120px] sm:w-22 lg:w-24 overflow-hidden rounded-lg border ${ i === index ? 'border-indigo-400' : 'border-[rgb(var(--border))]' }` }
                     >
                       <img src={ img } alt='' className='h-full w-full object-cover' loading='lazy' />
                     </button>

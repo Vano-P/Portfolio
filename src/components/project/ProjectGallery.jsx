@@ -23,7 +23,7 @@ const ProjectGallery = ({ images, title }) => {
               <button
                   key={ i }
                   onClick={ () => setActive(i) }
-                  className={ `cursor-pointer h-auto w-auto sm:w-22 lg:w-32 overflow-hidden rounded-xl border transition ${ i === active ? 'border-indigo-400' : 'border-[rgb(var(--border))] opacity-70 hover:opacity-100' } ` }
+                  className={ `cursor-pointer h-auto w-auto max-w-[120px] sm:w-22 lg:w-32 overflow-hidden rounded-xl border transition ${ i === active ? 'border-indigo-400' : 'border-[rgb(var(--border))] opacity-70 hover:opacity-100' } ` }
               >
                 <img
                     src={ img }

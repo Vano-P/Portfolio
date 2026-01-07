@@ -5,9 +5,11 @@ import { BsArrowLeftSquareFill, BsArrowRightSquareFill } from 'react-icons/bs'
 import { useLang } from '../../context/LanguageContext.jsx'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper/modules'
+import { Navigation, Pagination } from 'swiper/modules'
+
 import 'swiper/css'
 import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 const MoreProjectsSlider = ({ currentProject }) => {
   const navigate = useNavigate()
@@ -30,31 +32,46 @@ const MoreProjectsSlider = ({ currentProject }) => {
         <h3 className='mb-6 text-2xl font-semibold'>
           { t.moreProjects.title }
         </h3>
+        <div className='flex items-center gap-3 relative'>
 
-        <div className='flex items-center gap-3'>
-          <button
-              className='swiper-prev hidden md:block cursor-pointer transition enabled:hover:text-indigo-400 disabled:opacity-30'
-              aria-label='Previous'
-          >
+          <button className='swiper-prev hidden md:block cursor-pointer transition enabled:hover:text-indigo-400 disabled:opacity-30' aria-label='Previous'>
             <BsArrowLeftSquareFill size={ 50 } />
           </button>
+
           <Swiper
-              modules={ [ Navigation ] }
+              modules={ [ Navigation, Pagination ] }
               spaceBetween={ 12 }
               slidesPerView={ 3 }
               grabCursor={ true }
+              pagination={ {
+                el: '.swiper-pagination',
+                clickable: true
+              } }
               breakpoints={ {
-                0: { slidesPerView: 1, navigation: false },
-                768: { slidesPerView: 2, navigation: false },
+                0: {
+                  slidesPerView: 1,
+                  pagination: {
+                    clickable: true
+                  },
+                  navigation: false
+                },
+                768: {
+                  slidesPerView: 2,
+                  pagination: {
+                    clickable: true
+                  },
+                  navigation: false
+                },
                 1024: {
                   slidesPerView: 3,
+                  pagination: false,
                   navigation: {
                     nextEl: '.swiper-next',
                     prevEl: '.swiper-prev'
                   }
                 }
               } }
-              className='overflow-hidden'
+              className='mb-10'
           >
             { moreProjects.map((p) => (
                 <SwiperSlide key={ p.slug }>
@@ -83,11 +100,8 @@ const MoreProjectsSlider = ({ currentProject }) => {
                 </SwiperSlide>
             )) }
           </Swiper>
-
-          <button
-              className='swiper-next hidden md:block cursor-pointer transition enabled:hover:text-indigo-400 disabled:opacity-30'
-              aria-label='Next'
-          >
+          <div className='swiper-pagination swiperDotsCustom md:hidden block bottom-0'></div>
+          <button className='swiper-next hidden md:block cursor-pointer transition enabled:hover:text-indigo-400 disabled:opacity-30' aria-label='Next'>
             <BsArrowRightSquareFill size={ 50 } />
           </button>
         </div>

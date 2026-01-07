@@ -3,7 +3,7 @@ import { useLang } from '../../context/LanguageContext'
 import { FiChevronDown } from 'react-icons/fi'
 
 const LanguageSwitch = () => {
-  const { lang, setLang } = useLang()
+  const { lang, changeLang } = useLang()
   const [ open, setOpen ] = useState(false)
 
   return (
@@ -22,7 +22,7 @@ const LanguageSwitch = () => {
                   <button
                       key={ l }
                       onClick={ () => {
-                        setLang(l)
+                        changeLang(l)
                         setOpen(false)
                       } }
                       className={ `w-full rounded-lg px-3 py-2 text-left text-sm transition cursor-pointer

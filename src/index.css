@@ -4,21 +4,21 @@
    DESIGN TOKENS
 ====================== */
 :root {
+  --bg: 248 250 252;
+  --surface: 255 255 255;
+  --text: 17 24 39;
+  --muted: 107 114 128;
+  --border: 229 231 235;
+}
+
+/* ===== LIGHT MODE ===== */
+.dark {
   --bg: 11 14 20;
   --surface: 18 24 38;
   --primary: 99 102 241;
   --text: 229 231 235;
   --muted: 156 163 175;
   --border: 31 41 55;
-}
-
-/* ===== LIGHT MODE ===== */
-.light {
-  --bg: 248 250 252;
-  --surface: 255 255 255;
-  --text: 17 24 39;
-  --muted: 107 114 128;
-  --border: 229 231 235;
 }
 
 /* ======================
@@ -46,17 +46,31 @@ section {
   display: none;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+.app-motion {
+  transition: opacity 200ms ease,
+  transform 200ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.app-motion--hidden {
+  opacity: 0;
+  transform: scale(0.985);
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .app-motion {
+    transition: none;
   }
 }
 
-.animate-new {
-  animation: fadeUp 0.4s ease-out both;
+html.dark .swiper-pagination-bullet {
+  background-color: rgb(var(--text));
 }
+
+html.dark .swiper-pagination-bullet-active {
+  background-color: rgb(var(--primary));
+}
+
+
+
+

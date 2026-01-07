@@ -5,15 +5,21 @@ import './index.css'
 import App from './App.jsx'
 import { OrderProvider } from './context/OrderContext.jsx'
 import { LanguageProvider } from './context/LanguageContext.jsx'
+import AppMotion from './AppMotion.jsx'
+import { ThemeProvider } from './context/ThemeContext.jsx'
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
-      <LanguageProvider>
-        <OrderProvider>
-          <HashRouter>
-            <App />
-          </HashRouter>
-        </OrderProvider>
-      </LanguageProvider>
+      <ThemeProvider>
+        <LanguageProvider>
+          <OrderProvider>
+            <HashRouter>
+              <AppMotion>
+                <App />
+              </AppMotion>
+            </HashRouter>
+          </OrderProvider>
+        </LanguageProvider>
+      </ThemeProvider>
     </StrictMode>
 )

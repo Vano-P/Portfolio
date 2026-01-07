@@ -31,14 +31,14 @@ const HeroSection = () => {
             <div className='flex flex-wrap items-center gap-2 sm:gap-4'>
               <button
                   onClick={ () => scrollToSection('portfolio') }
-                  className='inline-flex items-center gap-2 rounded-lg sm:rounded-xl bg-indigo-500 px-4 py-2 sm:px-6 sm:py-3 font-medium text-white transition hover:bg-indigo-400'
+                  className='inline-flex items-center gap-2 rounded-lg sm:rounded-xl bg-indigo-500 px-4 py-2 sm:px-6 sm:py-3 font-medium text-white transition hover:bg-indigo-400 cursor-pointer'
               >
                 { t.hero.viewPortfolio } <FiArrowRight />
               </button>
 
               <button
                   onClick={ () => scrollToSection('contact') }
-                  className='inline-flex items-center gap-2 rounded-lg sm:rounded-xl border border-[rgb(var(--border))] px-4 py-2 sm:px-6 sm:py-3 font-medium transition hover:bg-[rgb(var(--surface))]'
+                  className='inline-flex items-center gap-2 rounded-lg sm:rounded-xl border border-[rgb(var(--border))] px-4 py-2 sm:px-6 sm:py-3 font-medium transition hover:bg-[rgb(var(--surface))] cursor-pointer  '
               >
                 { t.hero.contact } <FiMail />
               </button>
