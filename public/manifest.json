@@ -1,0 +1,24 @@
+{
+  "name": "Vano-P Portfolio",
+  "short_name": "Vano-P",
+  "description": "Frontend & Fullstack Web Developer Portfolio",
+  "start_url": "/portfolio/",
+  "scope": "/portfolio/",
+  "display": "standalone",
+  "background_color": "#0b0e14",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/portfolio/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/portfolio/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

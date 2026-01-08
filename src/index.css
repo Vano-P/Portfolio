@@ -4,7 +4,7 @@
    DESIGN TOKENS
 ====================== */
 :root {
-  --bg: 248 250 252;
+  --bg: 238 240 244;
   --surface: 255 255 255;
   --text: 17 24 39;
   --muted: 107 114 128;
@@ -26,6 +26,10 @@
 ====================== */
 html {
   scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 body {

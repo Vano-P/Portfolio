@@ -18,25 +18,23 @@ const MobileMenu = () => {
           <FiMenu />
         </button>
 
-        { open && (
-            <aside className={ `absolute right-0 top-0 w-[70vw] h-[100svh] bg-[rgb(var(--surface))]/95 border-l border-indigo-400/30 py-4 px-5 flex flex-col` }>
-              <button
-                  onClick={ () => setOpen(false) }
-                  className='rounded-lg p-2 hover:bg-[rgb(var(--border))] transition self-end'
-                  aria-label='Close menu'
-              >
-                <FiX size={ 22 } />
-              </button>
+        <aside className={ `absolute ${ open ? 'right-0 top-0' : 'right-[-70vw] top-0' } transition-all duration-700 ease w-[70vw] h-[100svh] bg-[rgb(var(--surface))]/95 border-l border-indigo-400/30 py-4 px-5 flex flex-col` }>
+          <button
+              onClick={ () => setOpen(false) }
+              className='rounded-lg p-2 hover:bg-[rgb(var(--border))] transition self-end'
+              aria-label='Close menu'
+          >
+            <FiX size={ 22 } />
+          </button>
 
-              <Navigation variant='mobile' onNavigate={ () => setOpen(false) } />
+          <Navigation variant='mobile' onNavigate={ () => setOpen(false) } />
 
-              <div className='mt-auto pt-5 pb-2 border-t border-white/10'>
-                <p className='text-sm text-muted text-center'>
-                  Frontend & Fullstack Developer
-                </p>
-              </div>
-            </aside>
-        ) }
+          <div className='mt-auto pt-5 pb-2 border-t border-white/10'>
+            <p className='text-sm text-muted text-center'>
+              Frontend & Fullstack Developer
+            </p>
+          </div>
+        </aside>
       </>
   )
 }
