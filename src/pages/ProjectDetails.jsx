@@ -38,7 +38,8 @@ const ProjectDetails = () => {
         </section>
     )
   }
-
+  console.log(project)
+  console.log(origin + '/portfolio/projects/' + project)
   return (
       <>
         {/* ✅ SEO FOR PROJECT PAGE */ }
@@ -52,6 +53,8 @@ const ProjectDetails = () => {
           <meta property='og:title' content={ title } />
           <meta property='og:description' content={ description } />
           <meta property='og:url' content={ url } />
+          { project.cover && <meta property='og:image' content={ `${ window.location.origin }${ project.cover }` } /> }
+
 
           {/* Optional: image */ }
           { project.cover && <meta property='og:image' content={ `https://vano-p.github.io${ project.cover }` } /> }

@@ -39,7 +39,7 @@ const Home = () => {
           <meta property='og:title' content={ title } />
           <meta property='og:description' content={ description } />
           <meta property='og:url' content={ url } />
-          <meta property='og:image' content={ `${ url }og-home.png` } />
+          <meta property='og:image' content={ `${ url }me.jpg` } />
         </Helmet>
 
         <HeroSection />
