@@ -38,8 +38,7 @@ const ProjectDetails = () => {
         </section>
     )
   }
-  console.log(project)
-  console.log(origin + '/portfolio/projects/' + project)
+  console.log()
   return (
       <>
         {/* ✅ SEO FOR PROJECT PAGE */ }
@@ -47,6 +46,13 @@ const ProjectDetails = () => {
           <title>{ title }</title>
           <meta name='description' content={ description } />
           <link rel='canonical' href={ url } />
+
+          {/* Open Graph */ }
+          <meta property='og:type' content='website' />
+          <meta property='og:title' content={ title } />
+          <meta property='og:description' content={ description } />
+          <meta property='og:url' content={ url } />
+          { project.cover && <meta property='og:image' content={ `${ origin }/portfolio/${ project.images[0] }` } /> }
         </Helmet>
 
         <section className='py-8'>

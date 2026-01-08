@@ -1,3 +1,5 @@
+import blackMirror1 from '../assets/projects/blackMirror/blackMirror-1.png'
+
 export const projects = [
   {
     slug: 'developer-landing',
@@ -20,7 +22,7 @@ export const projects = [
       ru: 'Реализован dark-first дизайн, чёткая структура, плавные взаимодействия и масштабируемая архитектура на React.'
     },
     tech: [ 'React', 'Tailwind CSS', 'Vite' ],
-    images: [ 'https://picsum.photos/1600/1200', 'https://picsum.photos/1599/1200', 'https://picsum.photos/1600/1199', 'https://picsum.photos/1599/1199' ],
+    images: [ blackMirror1, 'https://picsum.photos/1599/1200', 'https://picsum.photos/1600/1199', 'https://picsum.photos/1599/1199' ],
     demoUrl: 'https://example.com'
   },
 

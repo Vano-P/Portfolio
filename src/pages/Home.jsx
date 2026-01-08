@@ -33,6 +33,14 @@ const Home = () => {
           <title>{ title }</title>
           <meta name='description' content={ description } />
           <link rel='canonical' href={ url } />
+
+          {/* Open Graph */ }
+          <meta property='og:type' content='website' />
+          <meta property='og:title' content={ title } />
+          <meta property='og:description' content={ description } />
+          <meta property='og:url' content={ url } />
+          <meta property='og:image' content={ `${ url }og-home.png` } />
+          {/*  1200 × 630*/ }
         </Helmet>
 
         <HeroSection />
