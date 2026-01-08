@@ -3,6 +3,7 @@ import { FiX } from 'react-icons/fi'
 import { useOrder } from '../../context/OrderContext'
 import { buildOrderMessage } from '../../utils/buildOrderMessage'
 import { useLang } from '../../context/LanguageContext'
+import { useEffect } from 'react'
 
 const OrderModal = () => {
   const { order, closeOrder } = useOrder()
@@ -10,11 +11,17 @@ const OrderModal = () => {
 
   if (!order) return null
 
+  useEffect(() => {
+    const onKey = (e) => e.key === 'Escape' && closeOrder()
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [ closeOrder ])
+
   const message = buildOrderMessage(order, t)
   const encodedMessage = encodeURIComponent(message)
 
   return createPortal(
-      <div className='fixed inset-0 z-[200] flex items-center justify-center'>
+      <div role='dialog' aria-modal='true' className='fixed inset-0 z-[200] flex items-center justify-center'>
         {/* OVERLAY */ }
         <div
             className='absolute inset-0 bg-black/70 backdrop-blur-sm'

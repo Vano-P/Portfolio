@@ -14,17 +14,17 @@ const ServicesSection = () => {
   const { t } = useLang()
 
   return (
-      <section className='py-24' id='services'>
+      <section className='py-18 sm:py-24' id='services'>
         <Container>
           <SectionTitle title={ t.services.title } subtitle={ t.services.subtitle } />
 
-          <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
+          <div className='grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4'>
             { services.map((service) => (
                 <div
                     key={ service.key }
-                    className='rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] p-6 transition hover:-translate-y-1 hover:border-indigo-500/40 cursor-pointer'
+                    className='group rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] p-6 hover:-translate-y-1 transition-all duration-200 hover:border-indigo-500/40'
                 >
-                  <div className='mb-4 text-indigo-400'>{ service.icon }</div>
+                  <div className='mb-4 text-indigo-400 transition group-hover:text-indigo-300'>{ service.icon }</div>
 
                   <h3 className='mb-2 text-lg font-semibold'>{ t.services.items[service.key].title } </h3>
 

@@ -45,7 +45,7 @@ const PortfolioSection = () => {
     })
   }
   return (
-      <section id='portfolio' className='py-32 border-t border-[rgb(var(--border))]'>
+      <section id='portfolio' className='py-20 sm:py-30 border-t border-[rgb(var(--border))]'>
         <Container>
 
           <SectionTitle title={ t.portfolio.title } subtitle={ t.portfolio.subtitle } />

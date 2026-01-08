@@ -10,7 +10,7 @@ const PricingSection = () => {
   const { t } = useLang()
 
   return (
-      <section id='pricing' className='py-32 border-t border-[rgb(var(--border))]'>
+      <section id='pricing' className='py-20 sm:py-30 border-t border-[rgb(var(--border))]'>
         <Container>
           <SectionTitle title={ t.pricing.title } subtitle={ t.pricing.subtitle } />
 
@@ -22,7 +22,7 @@ const PricingSection = () => {
               return (
                   <div
                       key={ plan.id }
-                      className={ `relative flex flex-col rounded-3xl border p-8 transition ${ plan.highlight ? 'border-indigo-500 bg-indigo-500/5' : 'border-[rgb(var(--border))] bg-[rgb(var(--surface))]' }` }
+                      className={ `relative flex flex-col rounded-3xl border p-8 transition ${ plan.highlight ? 'border-indigo-500 bg-indigo-500/5' : 'hover:-translate-y-1 hover:shadow-sm transition-all duration-200 border-[rgb(var(--border))] bg-[rgb(var(--surface))]' }` }
                   >
                     { plan.highlight &&
                         <span className='absolute -top-3 left-6 rounded-full bg-indigo-500 px-3 py-1 text-xs font-medium text-white'> { t.pricing.popular } </span>
@@ -32,7 +32,7 @@ const PricingSection = () => {
 
                     <p className='mb-6 text-sm text-[rgb(var(--muted))]'> { planText.subtitle } </p>
 
-                    <div className='mb-6 text-4xl font-bold'> { plan.price } </div>
+                    <div className='mb-6 text-4xl font-bold tracking-tight'> { plan.price } </div>
 
                     <ul className='mb-8 space-y-3'>
                       { plan.featureKeys.map((key, i) => (

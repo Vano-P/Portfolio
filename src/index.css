@@ -71,6 +71,22 @@ html.dark .swiper-pagination-bullet-active {
   background-color: rgb(var(--primary));
 }
 
+.scroll-hint {
+  opacity: 0.6;
+  animation: scrollBounce 1.4s ease-in-out infinite;
+  transition: opacity 0.3s ease;
+}
+
+/* hover — лёгкий акцент */
+.scroll-hint:hover { opacity: 1; }
+
+/* сама анимация */
+@keyframes scrollBounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 8px); }
+}
+
+
 
 
 

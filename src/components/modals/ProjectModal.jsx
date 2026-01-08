@@ -1,14 +1,20 @@
 import { createPortal } from 'react-dom'
 import { FiX, FiExternalLink } from 'react-icons/fi'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLockBodyScroll } from '../../hooks/useLockBodyScroll'
 import { useLang } from '../../context/LanguageContext'
 
 const ProjectModal = ({ project, onClose, onViewCase }) => {
   useLockBodyScroll(true)
   const [ index, setIndex ] = useState(0)
-  const { t } = useLang()
-  const { lang } = useLang()
+  const { t, lang } = useLang()
+
+  useEffect(() => {
+    const onKey = (e) => e.key === 'Escape' && onClose()
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [ onClose ])
+  useEffect(() => setIndex(0), [ project ])
 
   if (!project) return null
 

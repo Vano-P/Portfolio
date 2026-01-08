@@ -2,11 +2,13 @@ import { FiArrowRight, FiGithub, FiMail } from 'react-icons/fi'
 import Container from '../ui/Container.jsx'
 import { useLang } from '../../context/LanguageContext.jsx'
 import { scrollToSection } from '../../utils/scrollToSection.js'
+import { MdKeyboardArrowDown } from 'react-icons/md'
+import SectionTitle from '../ui/SectionTitle.jsx'
 
 const HeroSection = () => {
   const { t } = useLang()
   return (
-      <section id='home' className='relative overflow-hidden py-32'>
+      <section id='home' className='relative overflow-hidden py-20 sm:py-30'>
 
         {/* BACKGROUND GLOW */ }
         <div className='absolute inset-0 -z-10'>
@@ -55,6 +57,13 @@ const HeroSection = () => {
             </div>
           </div>
         </Container>
+        <button
+            aria-label='Scroll to services section'
+            className='scroll-hint absolute bottom-4 left-1/2 -translate-x-1/2 text-indigo-400 cursor-pointer'
+            onClick={ () => scrollToSection('services') }
+        >
+          <MdKeyboardArrowDown size={ 40 } />
+        </button>
       </section>
   )
 }

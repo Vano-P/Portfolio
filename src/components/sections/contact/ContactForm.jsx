@@ -35,22 +35,28 @@ const ContactForm = () => {
     const emailError = validateEmail(values.email)
 
     if (nameError || emailError || !values.message.trim()) {
-      setErrors({
-        name: nameError,
-        email: emailError,
-        message: !values.message.trim() ? 'required' : null
-      })
+      setErrors({ name: nameError, email: emailError, message: !values.message.trim() ? 'required' : null })
       setStatus('error')
       return
     }
-
     setErrors({})
     setStatus('loading')
 
-    await new Promise((r) => setTimeout(r, 1200))
+    try {
+      const res = await fetch('https://vercel-contact-api.vercel.app/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values)
+      })
 
-    setStatus('success')
-    setValues(initialState)
+      if (!res.ok) throw new Error()
+
+      setStatus('success')
+      setValues(initialState)
+    }
+    catch {
+      setStatus('error')
+    }
   }
 
 
@@ -122,6 +128,7 @@ const ContactForm = () => {
           </div>
 
           <button
+              type='submit'
               disabled={ status === 'loading' }
               className='mt-2 inline-flex items-center justify-center rounded-xl bg-indigo-500 px-6 py-3 font-medium text-white transition hover:bg-indigo-400 disabled:opacity-60'
           >

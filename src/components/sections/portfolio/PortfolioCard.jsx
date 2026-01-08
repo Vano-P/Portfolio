@@ -1,12 +1,13 @@
 import { useLang } from '../../../context/LanguageContext.jsx'
 
-const ProjectCard = ({ project, onClick }) => {
+const ProjectCard = ({ project, onSelect }) => {
   const { lang } = useLang()
   return (
       <button
+          aria-label={ `Open project ${ project.title }` }
           data-portfolio-card=''
-          onClick={ () => onClick(project) }
-          className='flex flex-col group overflow-hidden rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] hover:-translate-y-1 hover:border-indigo-400/40 hover:shadow-[0_0_0_1px_rgba(99,102,241,0.15)] cursor-pointer'
+          onClick={ () => onSelect(project) }
+          className='focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/60 flex flex-col group overflow-hidden rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] hover:-translate-y-1 hover:border-indigo-400/40 hover:shadow-[0_0_0_1px_rgba(99,102,241,0.15)] cursor-pointer'
       >
         <div className='aspect-[16/10] overflow-hidden'>
           <img

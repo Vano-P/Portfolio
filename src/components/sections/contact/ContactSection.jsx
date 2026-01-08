@@ -9,7 +9,7 @@ const ContactSection = () => {
   const { t } = useLang()
 
   return (
-      <section id='contact' className='py-24 border-t border-[rgb(var(--border))]'>
+      <section id='contact' className='py-18 sm:py-24 border-t border-[rgb(var(--border))]'>
         <Container>
           <div className='grid gap-16 items-start lg:grid-cols-2'>
 

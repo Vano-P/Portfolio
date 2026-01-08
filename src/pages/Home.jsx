@@ -13,11 +13,13 @@ const Home = () => {
   return (
       <>
         <HeroSection />
-        <LazySection> <Suspense fallback={ <SectionSkeleton /> }> <ServicesSection /> </Suspense> </LazySection>
-        <LazySection> <Suspense fallback={ <SectionSkeleton /> }> <AboutSection /> </Suspense> </LazySection>
-        <LazySection> <Suspense fallback={ <SectionSkeleton /> }> <PortfolioSection /> </Suspense> </LazySection>
-        <LazySection> <Suspense fallback={ <SectionSkeleton /> }> <PricingSection /> </Suspense> </LazySection>
-        <LazySection> <Suspense fallback={ <SectionSkeleton /> }> <ContactSection /> </Suspense> </LazySection>
+        <Suspense fallback={ <SectionSkeleton /> }>
+          <LazySection> <ServicesSection /> </LazySection>
+          <LazySection> <AboutSection /> </LazySection>
+          <LazySection> <PortfolioSection /> </LazySection>
+          <LazySection> <PricingSection /> </LazySection>
+          <LazySection> <ContactSection /> </LazySection>
+        </Suspense>
       </>
   )
 }

@@ -3,8 +3,8 @@ export const en = {
     eyebrow: 'Web Developer · Modern Interfaces · Clean UX',
     title: 'High-quality websites built to convert visitors into clients',
     description: 'I help businesses and individuals create modern, fast, and reliable websites that build trust and drive results.',
-    viewPortfolio: 'View portfolio',
-    contact: 'Contact me'
+    viewPortfolio: 'See my work',
+    contact: 'Start a project'
   },
   services: {
     title: 'Services',
