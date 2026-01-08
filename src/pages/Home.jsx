@@ -33,13 +33,6 @@ const Home = () => {
           <title>{ title }</title>
           <meta name='description' content={ description } />
           <link rel='canonical' href={ url } />
-
-          {/* Open Graph */ }
-          <meta property='og:type' content='website' />
-          <meta property='og:title' content={ title } />
-          <meta property='og:description' content={ description } />
-          <meta property='og:url' content={ url } />
-          <meta property='og:image' content={ `${ url }me.jpg` } />
         </Helmet>
 
         <HeroSection />

@@ -47,17 +47,6 @@ const ProjectDetails = () => {
           <title>{ title }</title>
           <meta name='description' content={ description } />
           <link rel='canonical' href={ url } />
-
-          {/* Open Graph */ }
-          <meta property='og:type' content='website' />
-          <meta property='og:title' content={ title } />
-          <meta property='og:description' content={ description } />
-          <meta property='og:url' content={ url } />
-          { project.cover && <meta property='og:image' content={ `${ window.location.origin }${ project.cover }` } /> }
-
-
-          {/* Optional: image */ }
-          { project.cover && <meta property='og:image' content={ `https://vano-p.github.io${ project.cover }` } /> }
         </Helmet>
 
         <section className='py-8'>
