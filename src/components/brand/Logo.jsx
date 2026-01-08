@@ -5,7 +5,9 @@ const Logo = ({ size = 'md' }) => {
   const navigate = useNavigate()
 
   const handleClick = () => {
-    if (location.pathname === '/') window.scrollTo({ top: 0, behavior: 'smooth' })
+    const isHome = location.hash === '#/' || location.hash === ''
+
+    if (isHome) window.scrollTo({ top: 0, behavior: 'smooth' })
     else navigate('/')
   }
 
