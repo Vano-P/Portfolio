@@ -1,0 +1,1 @@
+import{j as s}from"./index-Dy3iiyz0.js";const a=({title:e,subtitle:t})=>s.jsxs("div",{className:"mb-10 max-w-2xl",children:[s.jsxs("h2",{className:"mb-4 text-3xl font-bold sm:text-4xl",children:[e,s.jsx("span",{className:"text-indigo-400",children:"."})]}),s.jsxs("p",{className:"text-[rgb(var(--muted))]",children:[" ",t," "]})]});export{a as S};
