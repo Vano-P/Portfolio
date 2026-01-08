@@ -10,7 +10,7 @@ const variants = {
 const linkVariants = {
   header: 'text-sm font-medium text-[rgb(var(--muted))] hover:text-[rgb(var(--text))] cursor-pointer',
   footer: 'text-sm text-[rgb(var(--muted))] hover:text-indigo-400 transition cursor-pointer',
-  mobile: 'text-base font-medium'
+  mobile: 'text-base font-medium text-lg'
 }
 
 const navItems = [
@@ -22,14 +22,17 @@ const navItems = [
   { key: 'contact', id: 'contact' }
 ]
 
-const Navigation = ({ variant = 'header' }) => {
+const Navigation = ({ variant = 'header', onNavigate }) => {
   const { t } = useLang()
   return (
       <nav className={ variants[variant] }>
         { navItems.map((item) => (
             <button
                 key={ item.key }
-                onClick={ () => scrollToSection(item.id) }
+                onClick={ () => {
+                  scrollToSection(item.id)
+                  onNavigate()
+                } }
                 className={ `${ linkVariants[variant] } transition` }
             >
               { t.nav[item.key] }

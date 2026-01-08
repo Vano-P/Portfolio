@@ -37,7 +37,7 @@ const AboutSection = () => {
               <div className='group relative w-full max-w-sm rounded-3xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] p-4'>
                 <div className='overflow-hidden rounded-2xl'>
                   <img
-                      src='./me.jpg'
+                      src='me.jpg'
                       alt='Vano'
                       className='h-full w-full object-cover grayscale-[20%] contrast-[1.03] transition-all duration-500 ease-out group-hover:grayscale-0 group-hover:contrast-100 group-hover:scale-[1.02]'
                       loading='lazy'

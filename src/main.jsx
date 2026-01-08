@@ -13,7 +13,7 @@ createRoot(document.getElementById('root')).render(
       <ThemeProvider>
         <LanguageProvider>
           <OrderProvider>
-            <BrowserRouter basename='/portfolio'>
+            <BrowserRouter basename='/portfolio/'>
               <AppMotion>
                 <App />
               </AppMotion>

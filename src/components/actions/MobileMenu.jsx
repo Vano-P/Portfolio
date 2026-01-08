@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import Navigation from '../Navigation.jsx'
 
 const MobileMenu = () => {
   const [ open, setOpen ] = useState(false)
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => (document.body.style.overflow = '')
+  }, [ open ])
   return (
       <>
         <button
@@ -15,7 +19,7 @@ const MobileMenu = () => {
         </button>
 
         { open && (
-            <aside className='absolute right-0 top-0 h-[100vh] w-[70vw] bg-[rgb(var(--surface))] backdrop-blur-3xl py-3 px-4 flex flex-col'>
+            <aside className={ `absolute right-0 top-0 w-[70vw] h-[100svh] bg-[rgb(var(--surface))]/95 border-l border-indigo-400/30 py-4 px-5 flex flex-col` }>
               <button
                   onClick={ () => setOpen(false) }
                   className='rounded-lg p-2 hover:bg-[rgb(var(--border))] transition self-end'
@@ -23,7 +27,14 @@ const MobileMenu = () => {
               >
                 <FiX size={ 22 } />
               </button>
-              <Navigation variant='mobile' />
+
+              <Navigation variant='mobile' onNavigate={ () => setOpen(false) } />
+
+              <div className='mt-auto pt-5 pb-2 border-t border-white/10'>
+                <p className='text-sm text-muted text-center'>
+                  Frontend & Fullstack Developer
+                </p>
+              </div>
             </aside>
         ) }
       </>

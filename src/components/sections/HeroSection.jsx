@@ -59,7 +59,7 @@ const HeroSection = () => {
         </Container>
         <button
             aria-label='Scroll to services section'
-            className='scroll-hint absolute bottom-4 left-1/2 -translate-x-1/2 text-indigo-400 cursor-pointer'
+            className='scroll-hint absolute bottom-4 left-1/2 text-indigo-400 cursor-pointer'
             onClick={ () => scrollToSection('services') }
         >
           <MdKeyboardArrowDown size={ 40 } />
