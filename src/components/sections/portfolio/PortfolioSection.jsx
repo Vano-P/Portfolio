@@ -29,7 +29,7 @@ const PortfolioSection = () => {
   const visibleProjects = filteredProjects.slice(0, visibleCount)
 
   const handleCloseModal = useCallback(() => setActiveProject(null), [])
-  const handleViewCase = useCallback((slug) => navigate(`/portfolio/${ slug }`), [ navigate ])
+  const handleViewCase = useCallback((slug) => navigate(`/projects/${ slug }`), [ navigate ])
   const handleFilterChange = (filter) => {
     setActiveFilter(filter)
     setVisibleCount(STEP)

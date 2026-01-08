@@ -13,7 +13,7 @@ export const AppRouter = () => {
         <Route element={ <Layout /> }>
           <Route path='/' element={ <Home /> } />
           <Route
-              path='/portfolio/:slug'
+              path='/projects/:slug'
               element={
                 <Suspense fallback={ <SectionSkeleton /> }>
                   <LazySection>

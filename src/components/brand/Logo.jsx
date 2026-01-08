@@ -1,15 +1,6 @@
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Logo = ({ size = 'md' }) => {
-  const location = useLocation()
-  const navigate = useNavigate()
-
-  const handleClick = () => {
-    const isHome = location.hash === '#/' || location.hash === ''
-
-    if (isHome) window.scrollTo({ top: 0, behavior: 'smooth' })
-    else navigate('/')
-  }
 
   const sizes = {
     sm: 'text-2xl',
@@ -18,13 +9,14 @@ const Logo = ({ size = 'md' }) => {
   }
 
   return (
-      <button
-          onClick={ handleClick }
+      <Link
+          to={ '/' }
           className={ `font-bold tracking-tight cursor-pointer ${ sizes[size] }` }
           aria-label='Go to home'
+          onClick={ () => window.scrollTo({ top: 0, behavior: 'smooth' }) }
       >
         Vano<span className='text-indigo-500'>.P</span>
-      </button>
+      </Link>
   )
 }
 

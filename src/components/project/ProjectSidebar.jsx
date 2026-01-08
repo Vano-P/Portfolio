@@ -58,7 +58,7 @@ const ProjectSidebar = ({ project, t }) => {
             </p>
 
             <button
-                onClick={ () => navigate(`/portfolio/${ nextProject.slug }`) }
+                onClick={ () => navigate(`/projects/${ nextProject.slug }`) }
                 className='text-sm font-medium hover:text-indigo-400 transition cursor-pointer'
             >
               { nextProject.title } →

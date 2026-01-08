@@ -76,7 +76,7 @@ const MoreProjectsSlider = ({ currentProject }) => {
             { moreProjects.map((p) => (
                 <SwiperSlide key={ p.slug }>
                   <button
-                      onClick={ () => navigate(`/portfolio/${ p.slug }`) }
+                      onClick={ () => navigate(`/projects/${ p.slug }`) }
                       className='block h-full overflow-hidden rounded-2xl border border-[rgb(var(--border))] text-left transition hover:-translate-y-1 cursor-pointer'
                   >
                     <div className='aspect-[16/10] overflow-hidden'>

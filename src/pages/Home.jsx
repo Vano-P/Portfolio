@@ -19,6 +19,7 @@ const Home = () => {
       ? 'Персональное портфолио frontend и fullstack разработчика. React, JavaScript, современные сайты.'
       : 'Personal portfolio of a frontend & fullstack web developer. React, JavaScript, modern websites.'
   const url = `${ origin }/portfolio/`
+  console.log(url)
   useEffect(() => {
     document.documentElement.lang = lang
   }, [ lang ])

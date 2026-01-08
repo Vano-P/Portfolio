@@ -19,7 +19,7 @@ const ProjectDetails = () => {
 
   const title = `${ project.title } | Vano-P`
   const description = project.description
-  const url = `${ origin }/portfolio/#/portfolio/${ project.slug }`
+  const url = `${ origin }/portfolio/projects/${ project.slug }`
   if (!project) {
     return (
         <section className='py-32'>
