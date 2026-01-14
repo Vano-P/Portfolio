@@ -2,11 +2,10 @@ import { useEffect } from 'react'
 
 export const useLockBodyScroll = (locked) => {
   useEffect(() => {
-    if (!locked) return
-    const original = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
+    const body = document.body
+    if (locked) body.classList.add('luck-scroll')
     return () => {
-      document.body.style.overflow = original
+      body.classList.remove('luck-scroll')
     }
   }, [ locked ])
 }

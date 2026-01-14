@@ -1,13 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import Navigation from '../Navigation.jsx'
+import { useLockBodyScroll } from '../../hooks/useLockBodyScroll.jsx'
 
 const MobileMenu = () => {
   const [ open, setOpen ] = useState(false)
-  useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
-    return () => (document.body.style.overflow = '')
-  }, [ open ])
+  useLockBodyScroll(open)
+
   return (
       <>
         <button
@@ -18,7 +17,7 @@ const MobileMenu = () => {
           <FiMenu />
         </button>
 
-        <aside className={ `absolute ${ open ? 'right-0 top-0' : 'right-[-70vw] top-0' } transition-all duration-700 ease w-[70vw] h-[100svh] bg-[rgb(var(--surface))]/95 border-l border-indigo-400/30 py-4 px-5 flex flex-col` }>
+        <aside className={ `fixed ${ open ? 'right-0 top-0' : 'right-[-70vw] top-0' } transition-all duration-400 ease-out w-[70vw] h-screen bg-[rgb(var(--surface))]/95 border-l border-indigo-400/30 py-4 px-5 flex flex-col` }>
           <button
               onClick={ () => setOpen(false) }
               className='rounded-lg p-2 hover:bg-[rgb(var(--border))] transition self-end'

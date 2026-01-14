@@ -24,18 +24,14 @@
 /* ======================
    BASE
 ====================== */
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
-html, body {
-  overflow-x: hidden;
-}
 
 body {
   background-color: rgb(var(--bg));
   color: rgb(var(--text));
   font-family: Inter, system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -89,6 +85,8 @@ html.dark .swiper-pagination-bullet-active {
   0%, 100% { transform: translate(-50%, 0); }
   50% { transform: translate(-50%, 8px); }
 }
+
+body.luck-scroll {overflow: hidden}
 
 
 
