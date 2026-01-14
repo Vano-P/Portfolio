@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLang } from '../../../context/LanguageContext.jsx'
+import { useDebouncedValue } from '../../../hooks/useDebouncedValue.jsx'
 
 const initialState = { name: '', email: '', message: '' }
 
@@ -9,6 +10,9 @@ const ContactForm = () => {
   const [ values, setValues ] = useState(initialState)
   const [ status, setStatus ] = useState('idle') // idle | loading | success | error
   const [ errors, setErrors ] = useState({})
+
+  const debouncedValues = useDebouncedValue(values, 400)
+
 
   const onChange = (e) => {
     const { name, value } = e.target
@@ -49,7 +53,7 @@ const ContactForm = () => {
         body: JSON.stringify(values)
       })
 
-      if (!res.ok) throw new Error()
+      if (!res.ok) new Error('Failed to send..')
 
       setStatus('success')
       setValues(initialState)
@@ -59,7 +63,14 @@ const ContactForm = () => {
     }
   }
 
+  useEffect(() => {
+    if (!debouncedValues.name && !debouncedValues.email) return
 
+    setErrors({
+      name: validateName(debouncedValues.name),
+      email: validateEmail(debouncedValues.email)
+    })
+  }, [ debouncedValues ])
   return (
       <form
           onSubmit={ onSubmit }

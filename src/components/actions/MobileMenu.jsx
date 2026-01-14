@@ -17,7 +17,7 @@ const MobileMenu = () => {
           <FiMenu />
         </button>
 
-        <aside className={ `fixed ${ open ? 'right-0 top-0' : 'right-[-70vw] top-0' } transition-all duration-400 ease-out w-[70vw] h-screen bg-[rgb(var(--surface))]/95 border-l border-indigo-400/30 py-4 px-5 flex flex-col` }>
+        <aside className={ `fixed ${ open ? 'translate-x-0' : 'translate-x-full' } top-0 right-0 transform transition-transform duration-400 ease-out w-[70vw] h-screen bg-[rgb(var(--surface))]/95 border-l border-indigo-400/30 py-4 px-5 flex flex-col` }>
           <button
               onClick={ () => setOpen(false) }
               className='rounded-lg p-2 hover:bg-[rgb(var(--border))] transition self-end'
